@@ -5,6 +5,7 @@ import           Control.Monad.IO.Class
 import           Control.Monad.Trans.State
 import           Mash
 import           System.Environment        (getArgs)
+import           System.Exit
 
 main :: IO ()
 main = do
@@ -39,6 +40,8 @@ usage = do
   putStrLn "--left bitwise shift left"
   putStrLn "--right bitwise shift right"
   putStrLn "--file filename to corrupt"
+  putStrLn "--to output filename"
+  exitSuccess
 
 -- | read will gladly parse both hex and decimal for us.
 parse :: String -> Int
